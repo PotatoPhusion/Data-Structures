@@ -71,6 +71,6 @@ int main()
 
 int userInput()
 {
-    input << cin;
+    cin >> input;
     return input;
 }
