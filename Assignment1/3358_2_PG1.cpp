@@ -18,6 +18,8 @@ using namespace std;
 
 int main()
 {
+    int x;
+
     cout << "Welcome to My APP." << endl;
     cout << "This APP accepts an integer from the keyboard." << endl;
     cout << "The APP Calculates and Displays the following: " << endl;
@@ -38,4 +40,31 @@ int main()
 
     cout << "3. The numbers will be separated into its individual digits." << endl
          << "Then each digit of the integer will be displayed in English." << endl;
+
+    cout << endl;
+
+    cout << "4. Indicate whether or not the integer is an arm strong number." << endl;
+
+    cout << endl;
+
+    cout << "5. The factorial of the integer will be calculated and displayed." << endl;
+
+    cout << endl;
+
+    cout << "6. Indicate whether or not the integer is prime. Then, all the prime numbers " << endl
+         << "between 1 and that number will also be displayed." << endl;
+
+    cout << endl;
+
+    cout << "7. The hailstone sequence starting at n will be calculated and " << endl
+         << "displayed." << endl;
+
+    cout << endl;
+
+    cout << "Enter a positive integer number > 0 and < 200 ---> ";
+    cin >> x;
+
+    cout << x << endl; // error checking yo
+
+
 }
