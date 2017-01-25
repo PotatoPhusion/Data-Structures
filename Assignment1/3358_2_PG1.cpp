@@ -72,5 +72,15 @@ int main()
 int userInput()
 {
     cin >> input;
+
+    // TODO: determine the type of input attempted
+    // Clears cin buffer of bad input if not an integer
+    while(!(cin >> num1))
+    {
+        cout << "Incorrect input. Please try again." << endl;
+        cin.clear();
+        cin.ignore(1000, '\n');     // Ignores up to 1000 inputs or until a new line
+    }
+
     return input;
 }
