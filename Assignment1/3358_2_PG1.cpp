@@ -39,3 +39,9 @@ int main()
     cout << "3. The numbers will be separated into its individual digits." << endl
          << "Then each digit of the integer will be displayed in English." << endl;
 }
+
+int userInput()
+{
+    input << cin;
+    return input;
+}
