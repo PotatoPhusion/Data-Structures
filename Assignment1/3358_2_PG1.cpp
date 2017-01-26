@@ -115,6 +115,10 @@ int currency(int input)
     int nickels = 20;
     int cents = 100;
 
+    cout << "Currency Calculation" << endl;
+    cout << endl;
+    cout << "$" << input << " is equivalent to: " << endl;
+    cout << endl;
     cout << input * quarters << " quarter/s" << endl;
     cout << input * dimes << " dime/s" << endl;
     cout << input * nickels << " nickel/s" << endl;
