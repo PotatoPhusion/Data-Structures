@@ -18,6 +18,7 @@ using namespace std;
 
 int userInput();
 int currency(int);
+int age(int);
 
 int main()
 {
@@ -84,6 +85,7 @@ int main()
         cout << endl;
 
         currency(input);
+        age(input);
 
         // Catches bad inputs
         while(input < 1 || input > 200 || cin.fail()) {
@@ -123,6 +125,27 @@ int currency(int input)
     cout << input * dimes << " dime/s" << endl;
     cout << input * nickels << " nickel/s" << endl;
     cout << input * cents << " cent/s" << endl;
+
+}
+
+int age(int input)
+{
+
+    int month = 12;
+    int days = 365;
+    int hours = 24 * 365;
+    int minutes = 60 * hours;
+    int seconds = 60 * minutes;
+
+    cout << "Age Calculation" << endl;
+    cout << endl;
+    cout << "Assuming that you are " << input << " years old, then" << endl;
+    cout << endl;
+    cout << "You are " << month * input << " months old" << endl;
+    cout << "You are " << days * input << " days old" << endl;
+    cout << "You are " << hours * input << " hours old" << endl;
+    cout << "You are " << minutes * input << " minutes old" << endl;
+    cout << "You are " << static_cast<long long>(seconds) * input << " seconds old" << endl;
 
 }
 
