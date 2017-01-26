@@ -1,16 +1,18 @@
 // Roster Number: 2
 //
-// Author Name: Rafael Reza & Cullen
+// Author Names: Rafael Reza & Cullen Sturdivant
 // Due Date: 01/30/2017
 // Programming Assignment 1
 // Spring 2017 - CS  3358 - Section Number: 2
-// Instructor : Husain Gholoom.
+// Instructor : Husain Gholoom
 //
 // Description: Accepts a positive integer greater than 0
-// and less than 200 and runs in through 7 different
+// and less than 200 and runs it through 7 different
 // functions
+
 #include <iomanip>
 #include <iostream>
+#include <typeinfo>
 
 using namespace std;
 
@@ -32,55 +34,76 @@ int main()
 
     cout << endl;
 
-    cout << "2. Assuming that the integer represents person's age in years then, " << endl
-         << "number of months, days, hours, minutes, and seconds for the person will be " << endl
+    cout << "2. Assuming that the integer represents person's age in years "
+         << "then, " << endl
+         << "number of months, days, hours, minutes, and seconds for the "
+         << "person will be " << endl
          << "calculated and displayed." << endl;
 
     cout << endl;
 
-    cout << "3. The numbers will be separated into its individual digits." << endl
-         << "Then each digit of the integer will be displayed in English." << endl;
+    cout << "3. The numbers will be separated into its individual digits."
+         << endl
+         << "Then each digit of the integer will be displayed in English."
+         << endl;
 
     cout << endl;
 
-    cout << "4. Indicate whether or not the integer is an arm strong number." << endl;
+    cout << "4. Indicate whether or not the integer is an arm strong number."
+         << endl;
 
     cout << endl;
 
-    cout << "5. The factorial of the integer will be calculated and displayed." << endl;
+    cout << "5. The factorial of the integer will be calculated and displayed."
+         << endl;
 
     cout << endl;
 
-    cout << "6. Indicate whether or not the integer is prime. Then, all the prime numbers " << endl
+    cout << "6. Indicate whether or not the integer is prime. Then, all the "
+         << "prime numbers " << endl
          << "between 1 and that number will also be displayed." << endl;
 
     cout << endl;
 
-    cout << "7. The hailstone sequence starting at n will be calculated and " << endl
+    cout << "7. The hailstone sequence starting at n will be calculated and "
+         << endl
          << "displayed." << endl;
 
     cout << endl;
 
     cout << "Enter a positive integer number > 0 and < 200 ---> ";
-    cin >> x;
-
-    cout << x << endl; // error checking yo
 
 
-}
 
-int userInput()
-{
-    cin >> input;
+    char foo;
 
-    // TODO: determine the type of input attempted
-    // Clears cin buffer of bad input if not an integer
-    while(!(cin >> num1))
+    do
     {
-        cout << "Incorrect input. Please try again." << endl;
-        cin.clear();
-        cin.ignore(1000, '\n');     // Ignores up to 1000 inputs or until a new line
-    }
+        int input;
+        cin >> input;
+        cout << endl;
 
-    return input;
+        // Catches bad inputs
+        while(input < 1 || input > 200 || cin.fail()) {
+            if (typeid(input) != typeid(int()))
+            {
+                cout << "Error! You entered a(n) "
+                     << "FIGURE THIS OUT AT SOME POINT" << "." << endl
+                     << "Please enter a positive integer." << endl << endl;
+            }
+            else if (input < 1 || input > 200)
+            {
+                cout << "Error! Number must be > 0 and < 200" << endl << endl;
+            }
+
+            cin.clear();                   // Clears bad input flag
+            cin.ignore();		 		   // Clears input buffer
+            cout << "Enter a positive integer number > 0 and < 200 ---> ";
+            cin >> input;
+        }
+    } while (foo == 'y' || foo == 'Y');
+
+
 }
+
+
