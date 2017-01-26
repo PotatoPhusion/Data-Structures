@@ -17,10 +17,10 @@
 using namespace std;
 
 int userInput();
+int currency(int);
 
 int main()
 {
-    int x;
 
     cout << "Welcome to My APP." << endl;
     cout << "This APP accepts an integer from the keyboard." << endl;
@@ -83,6 +83,8 @@ int main()
         cin >> input;
         cout << endl;
 
+        currency(input);
+
         // Catches bad inputs
         while(input < 1 || input > 200 || cin.fail()) {
             if (typeid(input) != typeid(int()))
@@ -106,4 +108,17 @@ int main()
 
 }
 
+int currency(int input)
+{
+    int quarters = 4;
+    int dimes = 10;
+    int nickels = 20;
+    int cents = 100;
+
+    cout << input * quarters << " quarter/s" << endl;
+    cout << input * dimes << " dime/s" << endl;
+    cout << input * nickels << " nickel/s" << endl;
+    cout << input * cents << " cent/s" << endl;
+
+}
 
