@@ -21,6 +21,7 @@ int userInput();
 int currency(int);
 int age(int);
 int separate(int);
+int armStrong(int);
 
 int main()
 {
@@ -92,6 +93,7 @@ int main()
         cout << endl;
         separate(input);
         cout << endl;
+        armStrong(input);
 
         // Catches bad inputs
         while(input < 1 || input > 200 || cin.fail()) {
@@ -204,6 +206,24 @@ int separate(int input)
                 break;
             }
     }
+    cout << endl;
     return 0;
 }
+int armStrong(int input)
+{
+    int armNum;
+    int sum = 0;
+    int flag = input;
 
+    while ( input != 0)
+    {
+        armNum = input % 10;
+        sum += armNum * armNum * armNum;
+        input /= 10;
+    }
+
+    if (sum == flag)
+        cout << flag << " is an Armstrong number." << endl;
+    else
+        cout << flag << " is not an Armstrong number." << endl;
+}
