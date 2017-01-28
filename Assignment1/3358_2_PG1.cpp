@@ -22,6 +22,7 @@ int currency(int);
 int age(int);
 int separate(int);
 int armStrong(int);
+int factorial(int);
 
 int main()
 {
@@ -94,6 +95,8 @@ int main()
         separate(input);
         cout << endl;
         armStrong(input);
+        cout << endl;
+        factorial(input);
 
         // Catches bad inputs
         while(input < 1 || input > 200 || cin.fail()) {
@@ -117,7 +120,6 @@ int main()
 
 
 }
-
 int currency(int input)
 {
     int quarters = 4;
@@ -226,4 +228,21 @@ int armStrong(int input)
         cout << flag << " is an Armstrong number." << endl;
     else
         cout << flag << " is not an Armstrong number." << endl;
+}
+int factorial(int input)
+{
+    int total = 1;
+
+    cout << "Factorial of " << input << " = ";
+
+    if( input == 0)
+        cout << "1" << endl;
+    else
+    {
+        for (int i = 1; i <= input; i++)
+        {
+            total *= i;
+        }
+        cout << total << endl;
+    }
 }
