@@ -13,12 +13,14 @@
 #include <iomanip>
 #include <iostream>
 #include <typeinfo>
+#include <sstream>
 
 using namespace std;
 
 int userInput();
 int currency(int);
 int age(int);
+int separate(int);
 
 int main()
 {
@@ -85,7 +87,11 @@ int main()
         cout << endl;
 
         currency(input);
+        cout << endl;
         age(input);
+        cout << endl;
+        separate(input);
+        cout << endl;
 
         // Catches bad inputs
         while(input < 1 || input > 200 || cin.fail()) {
@@ -127,7 +133,6 @@ int currency(int input)
     cout << input * cents << " cent/s" << endl;
 
 }
-
 int age(int input)
 {
 
@@ -147,5 +152,58 @@ int age(int input)
     cout << "You are " << minutes * input << " minutes old" << endl;
     cout << "You are " << static_cast<long long>(seconds) * input << " seconds old" << endl;
 
+}
+int separate(int input)
+{
+    stringstream lengthOfInput;
+    lengthOfInput << input;
+
+    cout << "Separating digits for the integer: " << input << endl;
+
+    for (int i = 0; i < lengthOfInput.str().size(); i++)
+    {
+        cout << lengthOfInput.str().at(i) << "  ";
+
+    }
+
+    cout << endl;
+
+    for (int k = 0; k < lengthOfInput.str().size(); k++)
+    {
+        switch(lengthOfInput.str().at(k))
+            {
+                case '0':
+                cout << "Zero" << "  ";
+                break;
+                case '1':
+                cout << "One" << "   ";
+                break;
+                case '2':
+                cout << "Two" << "   ";
+                break;
+                case '3':
+                cout << "Three" << "   ";
+                break;
+                case '4':
+                cout << "Four" << "   ";
+                break;
+                case '5':
+                cout << "Five" << "   ";
+                break;
+                case '6':
+                cout << "Six" << "   ";
+                break;
+                case '7':
+                cout << "Seven" << "   ";
+                break;
+                case '8':
+                cout << "Eight" << "   ";
+                break;
+                case '9':
+                cout << "Nine" << "   ";
+                break;
+            }
+    }
+    return 0;
 }
 
