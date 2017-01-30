@@ -153,6 +153,13 @@ int main()
 
 }
 
+//******************************************************************************
+//
+//
+//
+//
+//
+//******************************************************************************
 void currency(int input)
 {
     int quarters = 4;
@@ -170,13 +177,20 @@ void currency(int input)
     cout << input * cents << " cent/s" << endl;
 }
 
+//******************************************************************************
+//
+//
+//
+//
+//
+//******************************************************************************
 void age(int input)
 {
     int month = 12;
     int days = 365;
     int hours = 24 * 365;
     int minutes = 60 * hours;
-    int seconds = 60 * minutes;
+    unsigned int seconds = 60 * minutes;
 
     cout << "Age Calculation" << endl;
     cout << endl;
@@ -190,6 +204,13 @@ void age(int input)
          << " seconds old" << endl;
 }
 
+//******************************************************************************
+//
+//
+//
+//
+//
+//******************************************************************************
 void separate(int input)
 {
     stringstream lengthOfInput;
@@ -244,6 +265,13 @@ void separate(int input)
     cout << endl;
 }
 
+//******************************************************************************
+//
+//
+//
+//
+//
+//******************************************************************************
 void armStrong(int input)
 {
     int armNum;
@@ -263,6 +291,13 @@ void armStrong(int input)
         cout << flag << " is not an Armstrong number." << endl;
 }
 
+//******************************************************************************
+//
+//
+//
+//
+//
+//******************************************************************************
 void factorial(int input)
 {
     long double total = 1;
@@ -281,6 +316,13 @@ void factorial(int input)
     }
 }
 
+//******************************************************************************
+// A function for determining if a number is prime or not.
+//
+// int input: the number to be evaluated
+//
+// Returns true if the number is prime.
+//******************************************************************************
 bool isPrime(int input)
 {
     bool prime = false;
@@ -300,6 +342,10 @@ bool isPrime(int input)
     return prime;
 }
 
+//******************************************************************************
+// A function for outputting whether a number is prime or not based off of the
+// isPrime() function
+//******************************************************************************
 void outputPrime(int input)
 {
     if(isPrime(input))
@@ -312,6 +358,11 @@ void outputPrime(int input)
     }
 }
 
+//******************************************************************************
+// A function that outputs a list of all prime numbers from 1 to a given number
+//
+// int input: The upper limit of the list of prime numbers to find
+//******************************************************************************
 void findPrimes(int input)
 {
     cout << "All prime numbers between 1 and " << input << " are:" << endl;
@@ -323,6 +374,12 @@ void findPrimes(int input)
     cout << endl;
 }
 
+//******************************************************************************
+// A function for finding the hailstone sequence of a number and then outputs
+// the list to the console
+//
+// int input: The number to find the hailstone sequence of
+//******************************************************************************
 void hailstone(int input)
 {
     int current = input;
