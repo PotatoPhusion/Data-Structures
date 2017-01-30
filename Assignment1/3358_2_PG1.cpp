@@ -1,4 +1,4 @@
-// Roster Number: 2
+// Roster Number: Not Given
 //
 // Author Names: Rafael Reza & Cullen Sturdivant
 // Due Date: 01/30/2017
@@ -17,15 +17,23 @@
 #include <cmath>
 
 using namespace std;
-
+//finds amount of quarters, nickels, dimes, & pennies from input
 void currency(int);
+//finds the age in months, days, hours, minutes, & seconds from input
 void age(int);
+//separates the users input and prints in English each digit
 void separate(int);
+//finds the Armstrong number of input
 void armStrong(int);
+//finds factorial of input
 void factorial(int);
+//determines if input is prime
 bool isPrime(int);
+//prints out to see if it is prime or not
 void outputPrime(int);
+//finds all prime numbers between 1 and input
 void findPrimes(int);
+//finds the hailstone sequence of input
 void hailstone(int);
 
 int main()
@@ -84,7 +92,7 @@ int main()
 
     do
     {
-        int input;
+        int input; //input from the user
 
         cout << "Enter a positive integer number > 0 and < 200 ---> ";
         cin >> input;
@@ -154,11 +162,13 @@ int main()
 }
 
 //******************************************************************************
+// finds amount of quarters, nickels, dimes, & pennies from input
+//
+// parameter 1 - input
 //
 //
-//
-//
-//
+// multiplies input by amount of quarters, nickels, dimes, &
+// pennies to see how many make up the input
 //******************************************************************************
 void currency(int input)
 {
@@ -178,11 +188,12 @@ void currency(int input)
 }
 
 //******************************************************************************
+// finds the age in months, days, hours, minutes, & seconds from input
 //
+// parameter 1 - input
 //
-//
-//
-//
+// multiplies input by months, days, hours, minutes, & seconds
+// to figure out how long those would be respectively
 //******************************************************************************
 void age(int input)
 {
@@ -205,11 +216,12 @@ void age(int input)
 }
 
 //******************************************************************************
+// separates the users input and prints in English each digit
 //
+// parameter 1 - input
 //
-//
-//
-//
+// spaces out a multiple digit input and spells out
+// in English each digit
 //******************************************************************************
 void separate(int input)
 {
@@ -266,11 +278,12 @@ void separate(int input)
 }
 
 //******************************************************************************
+// finds the Armstrong number of input
 //
+// parameter 1 - input
 //
-//
-//
-//
+// cubes each digit to see if they equal the input from
+// the user
 //******************************************************************************
 void armStrong(int input)
 {
@@ -292,11 +305,12 @@ void armStrong(int input)
 }
 
 //******************************************************************************
+// finds factorial of input
 //
+// parameter 1 - input
 //
-//
-//
-//
+// determines the total factorial of input from user
+// by multiplying from 1 to number inputted
 //******************************************************************************
 void factorial(int input)
 {
@@ -317,11 +331,11 @@ void factorial(int input)
 }
 
 //******************************************************************************
-// A function for determining if a number is prime or not.
+// A function that determines whether or not a number is prime
 //
-// int input: the number to be evaluated
+// int input: The number to be tested
 //
-// Returns true if the number is prime.
+// Returns bool: true if number is prime, false otherwise
 //******************************************************************************
 bool isPrime(int input)
 {
@@ -343,8 +357,10 @@ bool isPrime(int input)
 }
 
 //******************************************************************************
-// A function for outputting whether a number is prime or not based off of the
+// A function that outputs whether or not a number is prime based off of the
 // isPrime() function
+//
+// int input: The number to test if prime
 //******************************************************************************
 void outputPrime(int input)
 {
@@ -359,9 +375,9 @@ void outputPrime(int input)
 }
 
 //******************************************************************************
-// A function that outputs a list of all prime numbers from 1 to a given number
+// Outputs a list of prime numbers from one to a given upper limit
 //
-// int input: The upper limit of the list of prime numbers to find
+// int input: The upper limit
 //******************************************************************************
 void findPrimes(int input)
 {
@@ -375,10 +391,10 @@ void findPrimes(int input)
 }
 
 //******************************************************************************
-// A function for finding the hailstone sequence of a number and then outputs
+// A function for finding the hailstone sequence of a given number and outputs
 // the list to the console
 //
-// int input: The number to find the hailstone sequence of
+// int input: The number whose hailstone sequence to find
 //******************************************************************************
 void hailstone(int input)
 {
