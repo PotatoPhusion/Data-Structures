@@ -14,15 +14,19 @@
 #include <iostream>
 #include <typeinfo>
 #include <sstream>
+#include <cmath>
 
 using namespace std;
 
-int userInput();
-int currency(int);
-int age(int);
-int separate(int);
-int armStrong(int);
-int factorial(int);
+void currency(int);
+void age(int);
+void separate(int);
+void armStrong(int);
+void factorial(int);
+bool isPrime(int);
+void outputPrime(int);
+void findPrimes(int);
+void hailstone(int);
 
 int main()
 {
@@ -88,6 +92,25 @@ int main()
         cin >> input;
         cout << endl;
 
+        // Catches bad inputs
+        while(input < 1 || input > 200 || cin.fail()) {
+            if (cin.fail())
+            {
+                cout << "Error! This is not an integer." << endl
+                     << "Please enter a positive integer." << endl << endl;
+            }
+            else if (input < 1 || input > 200)
+            {
+                cout << "Error! Number must be > 0 and < 200" << endl << endl;
+            }
+
+            cin.clear();                   // Clears bad input flag
+            cin.ignore(256, '\n');		   // Clears input buffer
+            cout << "Enter a positive integer number > 0 and < 200 ---> ";
+            cin >> input;
+            cout << endl;
+        }
+
         currency(input);
         cout << endl;
         age(input);
@@ -97,30 +120,19 @@ int main()
         armStrong(input);
         cout << endl;
         factorial(input);
+        cout << endl;
+        outputPrime(input);
+        cout << endl;
+        findPrimes(input);
+        cout << endl;
+        hailstone(input);
+        cout << endl;
 
-        // Catches bad inputs
-        while(input < 1 || input > 200 || cin.fail()) {
-            if (typeid(input) != typeid(int()))
-            {
-                cout << "Error! You entered a(n) "
-                     << "FIGURE THIS OUT AT SOME POINT" << "." << endl
-                     << "Please enter a positive integer." << endl << endl;
-            }
-            else if (input < 1 || input > 200)
-            {
-                cout << "Error! Number must be > 0 and < 200" << endl << endl;
-            }
-
-            cin.clear();                   // Clears bad input flag
-            cin.ignore();		 		   // Clears input buffer
-            cout << "Enter a positive integer number > 0 and < 200 ---> ";
-            cin >> input;
-        }
     } while (foo == 'y' || foo == 'Y');
 
 
 }
-int currency(int input)
+void currency(int input)
 {
     int quarters = 4;
     int dimes = 10;
@@ -135,11 +147,10 @@ int currency(int input)
     cout << input * dimes << " dime/s" << endl;
     cout << input * nickels << " nickel/s" << endl;
     cout << input * cents << " cent/s" << endl;
-
 }
-int age(int input)
-{
 
+void age(int input)
+{
     int month = 12;
     int days = 365;
     int hours = 24 * 365;
@@ -154,10 +165,11 @@ int age(int input)
     cout << "You are " << days * input << " days old" << endl;
     cout << "You are " << hours * input << " hours old" << endl;
     cout << "You are " << minutes * input << " minutes old" << endl;
-    cout << "You are " << static_cast<long long>(seconds) * input << " seconds old" << endl;
-
+    cout << "You are " << static_cast<long long>(seconds) * input
+         << " seconds old" << endl;
 }
-int separate(int input)
+
+void separate(int input)
 {
     stringstream lengthOfInput;
     lengthOfInput << input;
@@ -209,9 +221,9 @@ int separate(int input)
             }
     }
     cout << endl;
-    return 0;
 }
-int armStrong(int input)
+
+void armStrong(int input)
 {
     int armNum;
     int sum = 0;
@@ -229,14 +241,15 @@ int armStrong(int input)
     else
         cout << flag << " is not an Armstrong number." << endl;
 }
-int factorial(int input)
+
+void factorial(int input)
 {
-    int total = 1;
+    long double total = 1;
 
     cout << "Factorial of " << input << " = ";
 
     if( input == 0)
-        cout << "1" << endl;
+        cout << total << endl;
     else
     {
         for (int i = 1; i <= input; i++)
@@ -245,4 +258,68 @@ int factorial(int input)
         }
         cout << total << endl;
     }
+}
+
+bool isPrime(int input)
+{
+    bool prime = false;
+
+    for (int i = 2; i <= ceil(sqrt(input)); i++)
+    {
+        if (input % i == 0)
+        {
+            prime = false;
+            i = sqrt(input) + 1;   //to end the loop
+        }
+        else
+        {
+            prime = true;
+        }
+    }
+    return prime;
+}
+
+void outputPrime(int input)
+{
+    if(isPrime(input))
+    {
+        cout << input << " is a prime number" << endl;
+    }
+    else
+    {
+        cout << input << " is not a prime number" << endl;
+    }
+}
+
+void findPrimes(int input)
+{
+    cout << "All prime numbers between 1 and " << input << " are:" << endl;
+    for (int i = 1; i <= input; i++)
+    {
+        if (isPrime(i))
+            cout << setw(5) << i << " is a prime number" << endl;
+    }
+    cout << endl;
+}
+
+void hailstone(int input)
+{
+    int current = input;
+
+    cout << "The Hailstone Sequence starting at " << input << " is:" << endl;
+    cout << current << "   ";
+
+    while (current != 1)
+    {
+        if (current % 2 == 0)
+        {
+            current /= 2;
+        }
+        else if(current % 2 == 1)
+        {
+            current = (current * 3) + 1;
+        }
+        cout << current << "   ";
+    }
+    cout << endl << endl;
 }
