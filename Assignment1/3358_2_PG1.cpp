@@ -80,20 +80,19 @@ int main()
 
     cout << endl;
 
-    cout << "Enter a positive integer number > 0 and < 200 ---> ";
-
-
-
-    char foo;
+    char choice;
 
     do
     {
         int input;
+
+        cout << "Enter a positive integer number > 0 and < 200 ---> ";
         cin >> input;
         cout << endl;
 
         // Catches bad inputs
-        while(input < 1 || input > 200 || cin.fail()) {
+        while(input < 1 || input > 200 || cin.fail())
+        {
             if (cin.fail())
             {
                 cout << "Error! This is not an integer." << endl
@@ -128,10 +127,32 @@ int main()
         hailstone(input);
         cout << endl;
 
-    } while (foo == 'y' || foo == 'Y');
+        cout << "Would you like to try another number?\n"
+             << "Enter y || Y for Yes or n || N for No ---> ";
+        cin >> choice;
+        choice = toupper(choice);
+        cout << endl;
 
+        // Catches bad inputs
+		while(choice != 'Y' && choice != 'N' || cin.fail())
+        {
+            cin.clear();                   // Clears bad input flag
+            cin.ignore(256, '\n');		   // Clears input buffer
+            cout << "Error! Invalid choice - Must be y || Y || n || N" << endl
+                 << endl << "Would you like to try another number?\n"
+                 << "Enter y || Y for Yes or n || N for No ---> ";
+            cin >> choice;
+            choice = toupper(choice);
+            cout << endl;
+		}
+
+    } while (choice != 'N');
+
+    cout << "\nThis APP was developed by Rafael Reza & Cullen Sturdivant\n"
+         << "January 29, 2017" << endl;
 
 }
+
 void currency(int input)
 {
     int quarters = 4;
