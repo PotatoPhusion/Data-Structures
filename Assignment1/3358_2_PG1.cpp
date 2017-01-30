@@ -17,15 +17,23 @@
 #include <cmath>
 
 using namespace std;
-
+//finds amount of quarters, nickels, dimes, & pennies from input
 void currency(int);
+//finds the age in months, days, hours, minutes, & seconds from input
 void age(int);
+//separates the users input and prints in english each digit
 void separate(int);
+//finds the armstrong number of input
 void armStrong(int);
+//finds factorial of input
 void factorial(int);
+//determines if input is prime
 bool isPrime(int);
+//prints out to see if it is prime or not
 void outputPrime(int);
+//finds all prime numbers between 1 and input
 void findPrimes(int);
+//finds the hailstone sequence of input
 void hailstone(int);
 
 int main()
@@ -84,7 +92,7 @@ int main()
 
     do
     {
-        int input;
+        int input; //input from the user
 
         cout << "Enter a positive integer number > 0 and < 200 ---> ";
         cin >> input;
@@ -153,6 +161,15 @@ int main()
 
 }
 
+//******************
+//finds amount of quarters, nickels, dimes, & pennies from input
+//
+//parameter 1 - input
+//
+//
+//multiplies input by amount of quarters, nickels, dimes, &
+//pennies to see how many make up the input
+//******************
 void currency(int input)
 {
     int quarters = 4;
@@ -170,6 +187,14 @@ void currency(int input)
     cout << input * cents << " cent/s" << endl;
 }
 
+//******************
+//finds the age in months, days, hours, minutes, & seconds from input
+//
+//parameter 1 - input
+//
+//multiplies input by months, days, hours, minutes, & seconds
+//to figure out how long those would be respectively
+//******************
 void age(int input)
 {
     int month = 12;
@@ -190,6 +215,14 @@ void age(int input)
          << " seconds old" << endl;
 }
 
+//******************
+//separates the users input and prints in english each digit
+//
+//parameter 1 - input
+//
+//spaces out a multiple digit input and spells out
+//in english each digit
+//******************
 void separate(int input)
 {
     stringstream lengthOfInput;
@@ -244,6 +277,14 @@ void separate(int input)
     cout << endl;
 }
 
+//******************
+//finds the armstrong number of input
+//
+//parameter 1 - input
+//
+//cubes each digit to see if they equal the input from
+//the user
+//******************
 void armStrong(int input)
 {
     int armNum;
@@ -263,6 +304,14 @@ void armStrong(int input)
         cout << flag << " is not an Armstrong number." << endl;
 }
 
+//******************
+//finds factorial of input
+//
+//parameter 1 - input
+//
+//determines the total factorial of input from user
+//by multiplying from 1 to number inputted
+//******************
 void factorial(int input)
 {
     long double total = 1;
