@@ -15,6 +15,7 @@
 using namespace std;
 
 void matrix(int);
+float diagonal1(vector<float>&);
 
 
 int main() {
@@ -50,6 +51,7 @@ int main() {
 
 void matrix(int input)
 {
+
     srand(time(0));
 
     vector<vector<float> >v;
@@ -73,4 +75,27 @@ void matrix(int input)
         cout << endl;
     }
 
+    // Here is the diagonal but I just threw it in here for now
+    // I was trying to figure out how to make it a separate function
+    // I kept messing with the parameters and stuff. But I'm not planning
+    // on leaving it here.
+    int diagonal = 0;
+    for(int i = 0; i < v.size(); i++)
+    {
+        //cout << v[i][i] << " ";
+        diagonal += v[i][i];
+    }
+    cout << "diagonal 1 is " << diagonal;
 }
+
+/*float diagonal1(vector<float> v)
+{
+    int diagonal = 0;
+    for(int i = 0; i < v.size(); i++)
+    {
+        cout << v[i][i] << " ";
+        diagonal += v[i][i];
+    }
+    cout << "diagonal 1 is " << diagonal;
+}
+*/
