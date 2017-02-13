@@ -4,7 +4,9 @@
 // Spring 2017 - CS  3358 - Section Number: 2
 // Instructor : Husain Gholoom
 //
-// Vectors and matrices and stuff
+// Takes user input, builds a 2d vector and then
+// finds the totals for rows, columns, and diagonals
+// as well as determining if they have a perfect number.
 
 #include <iomanip>
 #include <iostream>
