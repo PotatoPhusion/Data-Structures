@@ -14,9 +14,16 @@
 
 using namespace std;
 
+//
 void matrix(int);
+
+//
 bool diagonals(vector<vector<int> >, int);
+
+//
 bool sumRow(vector<vector<int> >, int);
+
+//
 bool sumColumn(vector<vector<int> >, int);
 
 
@@ -100,6 +107,13 @@ int main() {
     return 0;
 }
 
+//******************************************************************************
+//
+//
+//
+//
+//
+//******************************************************************************
 void matrix(int input)
 {
     int total = 0;
@@ -156,9 +170,14 @@ void matrix(int input)
 
 }
 
-//got the diagonal into its own function now but,
-//I placed it in the matrix function. Not sure if that's
-//exactly correct or the style required...
+//******************************************************************************
+// A function that calculates the sum across the diagonals of a matrix
+//
+// v: The 2D vector to be evaluated
+// perfNum: The perfect number of the passed matrix
+//
+// Returns bool: True if all sums equal perfect number, false otherwise
+//******************************************************************************
 bool diagonals(vector<vector<int> >v, int perfNum) {
     int mainDiag = 0;
     int secondDiag = 0;
@@ -187,6 +206,14 @@ bool diagonals(vector<vector<int> >v, int perfNum) {
     return flag;
 }
 
+//******************************************************************************
+// A function that calculates the sum for all rows in a matrix
+//
+// v: The 2D vector to be evaluated
+// perfNum: The perfect number of the passed matrix
+//
+// Returns bool: True if all sums equal perfect number, false otherwise
+//******************************************************************************
 bool sumRow(vector<vector<int> > v, int perfNum) {
 
     int total = 0;
@@ -212,6 +239,14 @@ bool sumRow(vector<vector<int> > v, int perfNum) {
     return flag;
 }
 
+//******************************************************************************
+// A function that calculates the sum for all columns in a matrix
+//
+// v: The 2D vector to be evaluated
+// perfNum: The perfect number of the passed matrix
+//
+// Returns bool: True if all sums equal perfect number, false otherwise
+//******************************************************************************
 bool sumColumn(vector<vector<int> > v, int perfNum) {
 
     int total = 0;
