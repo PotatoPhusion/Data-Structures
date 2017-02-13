@@ -15,7 +15,7 @@
 using namespace std;
 
 void matrix(int);
-void diagonal1(vector<vector<int> >);
+void diagonals(vector<vector<int> >);
 
 
 int main() {
@@ -43,6 +43,26 @@ int main() {
 
     cout << endl;
 
+    // Catches bad inputs
+    while(input <= 2 || cin.fail()) {
+
+        if (cin.fail()) {
+
+            cout << "Error! This is not an integer." << endl
+                 << "Please enter a positive integer." << endl << endl;
+        }
+        else if (input <= 2) {
+
+            cout << "Error! Number must be > 0 and < 200" << endl << endl;
+        }
+
+        cin.clear();                   // Clears bad input flag
+        cin.ignore(256, '\n');		   // Clears input buffer
+        cout << "Enter a positive integer number > 0 and < 200 ---> ";
+        cin >> input;
+        cout << endl;
+    }
+
     cout << "The perfect matrix that is created for size " << input << ":\n";
 
     matrix(input);
@@ -53,11 +73,11 @@ int main() {
 void matrix(int input)
 {
     int total = 0;
-    int perfNum = 3;
+    int perfNum = 0;
 
     srand(time(0));
 
-    vector<vector<int> >v;
+    vector<vector<int> > v;
 
     for (int i = 0; i < input; i++)
     {
@@ -81,25 +101,34 @@ void matrix(int input)
         cout << endl;
     }
 
-    cout << endl;
-
-    cout << "The perfect number is: " << (total / perfNum);
+    perfNum = total / 3;     // 3 is based off of the formula for perfect numbers
 
     cout << endl;
 
-    diagonal1(v); // here it is my friend, the first diagonal.
+    cout << "The perfect number is: " << (perfNum);
+
+    cout << endl;
+
+    diagonals(v); // here it is my friend, the first diagonal.
 }
 
 //got the diagonal into its own function now but,
 //I placed it in the matrix function. Not sure if that's
 //exactly correct or the style required...
-void diagonal1(vector<vector<int> >v)
-{
-    int diagonal = 0;
+void diagonals(vector<vector<int> >v) {
+    int mainDiag = 0;
+    int secondDiag = 0;
 
-    for(int i = 0; i < v.size(); i++)
-    {
-        diagonal += v[i][i];
+    for(int i = 0; i < v.size(); i++) {
+        mainDiag += v[i][i];
     }
-    cout << "Sum of numbers in first diagonal is: " << diagonal << endl;
+
+    for (int i = 0; i < v.size(); i++) {
+
+        int j = v.at(i).size() - 1 - i;
+        secondDiag += v[i][j];
+    }
+
+    cout << "Sum of numbers in first diagonal is: " << mainDiag << endl;
+    cout << "Sum of numbers in second diagonal is: " << secondDiag << endl;
 }
