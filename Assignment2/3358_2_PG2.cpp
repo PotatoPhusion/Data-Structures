@@ -14,16 +14,16 @@
 
 using namespace std;
 
-//
+//takes user input and builds a 2d vector
 void matrix(int);
 
-//
+//finds the total of the diagonal at first and last digit
 bool diagonals(vector<vector<int> >, int);
 
-//
+//finds the total for the each rows
 bool sumRow(vector<vector<int> >, int);
 
-//
+//finds the total for each column
 bool sumColumn(vector<vector<int> >, int);
 
 
@@ -108,11 +108,12 @@ int main() {
 }
 
 //******************************************************************************
+//A function that creates and builds a 2d vector dependent on user input
 //
+//input: The user input that sizes the 2d vector
 //
-//
-//
-//
+//prints out the user created vector as well as sums for rows,
+//columns, and diagonals.
 //******************************************************************************
 void matrix(int input)
 {
