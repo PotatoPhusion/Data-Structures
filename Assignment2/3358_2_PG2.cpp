@@ -16,6 +16,7 @@ using namespace std;
 
 void matrix(int);
 void diagonals(vector<vector<int> >);
+void sumRow(vector<vector<int> >);
 
 
 int main() {
@@ -110,6 +111,7 @@ void matrix(int input)
     cout << endl;
 
     diagonals(v); // here it is my friend, the first diagonal.
+    sumRow(v);
 }
 
 //got the diagonal into its own function now but,
@@ -131,4 +133,21 @@ void diagonals(vector<vector<int> >v) {
 
     cout << "Sum of numbers in first diagonal is: " << mainDiag << endl;
     cout << "Sum of numbers in second diagonal is: " << secondDiag << endl;
+}
+
+void sumRow(vector<vector<int> > v) {
+
+    int total = 0;
+
+    cout << fixed;
+
+    for (int i = 0; i < v.size(); i++) {
+        for (int j = 0; j < v.size(); j++) {
+            total += v[i][j];
+        }
+        cout << "Sum of numbers in Row" << setw(6) << "#" << i + 1
+             << setw(6) << " = " << total << endl;
+        total = 0;
+    }
+
 }
