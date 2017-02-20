@@ -7,6 +7,7 @@
 // Grades stuff TODO: Change this
 
 #include <iostream>
+#include <limits>
 
 using namespace std;
 
@@ -21,10 +22,13 @@ int main() {
             if (cin.fail()) {
                 throw "That is not a number!";
             }
+            else if (choice < 1 || choice == 8 || choice > 9) {
+                throw "That is not a valid menu option!";
+            }
         }
         catch (const char* error) {
             cerr << "\nERROR:" << error << "\n"
-                 << "Please choose a valid option." << endl;
+                 << "Please choose a valid option." << endl << endl;
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
