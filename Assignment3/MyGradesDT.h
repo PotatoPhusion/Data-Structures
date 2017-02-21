@@ -20,14 +20,11 @@ class MyGrades
     vector<double> exams;
 
     public:
-    void setQuiz(double); // took out vector argument seemed to work better
+    void setQuiz(double);
     void setPA(double);
     void setExams(double);
-    double quizGrades(); // lets see if it'll work without vector arg edit: it did
-    double progAssign();
+    double quizGrades();
+    double progGrades();
     double testGrades();
-    double overallGrade(vector<double>, vector<double>, vector<double>);
-    //pretty sure I don't need these arguments now, will fix later
-
-
+    double overallGrade();
 };

@@ -40,46 +40,54 @@ double MyGrades:: quizGrades()
     double average;
 
     cout << endl;
-    cout << "Show all quiz grades with average" << endl;
 
-    if(!quiz.size())
-         cout << "No Quizzes are recorded" << endl;
-    else
-        cout << "Quiz Grades are as follows " << endl;
-        for (int i = 0; i < quiz.size(); i++)
-        {
-            cout << fixed << setprecision(2) << quiz[i] << " ";
-            total += quiz[i];
-            average = (total / quiz.size());
+    if(!quiz.size()){
+    cout << "Show all quiz grades with average" << endl;
+    cout << "No Quizzes are recorded" << endl;
+    }
+    else{
+
+    cout << "Quiz Grades are as follows " << endl;
+
+    for (int i = 0; i < quiz.size(); i++){
+        cout << fixed << setprecision(2) << quiz[i] << " ";
+        total += quiz[i];
+        average = (total / quiz.size());
         }
+
     cout << endl;
 
     cout << fixed << setprecision(2) << "Average quiz grades is "
          << average << " out of 10";
+        }
 }
 
-double MyGrades:: progAssign()
+double MyGrades:: progGrades()
 {
     double total = 0;
     double average;
 
     cout << endl;
-    cout << "Show all Programming Assignment grades with average" << endl;
 
-    if(!prog.size())
-         cout << "No Program Grades are recorded" << endl;
-    else
-        cout << "Programming Assignment grades are as follows " << endl;
-        for (int i = 0; i < prog.size(); i++)
-        {
-            cout << fixed << setprecision(2) << prog[i] << " ";
-            total += prog[i];
-            average = (total / prog.size() * 2);
+    if(!prog.size()){
+    cout << "Show all Programming Assignment grades with average" << endl;
+    cout << "No Program Grades are recorded" << endl;
+    }
+    else{
+
+    cout << "Programming Assignment grades are as follows " << endl;
+
+    for (int i = 0; i < prog.size(); i++){
+        cout << fixed << setprecision(2) << prog[i] << " ";
+        total += prog[i];
+        average = (total / prog.size() * 2);
         }
+
     cout << endl;
 
-    cout << fixed << setprecision(2) << "Average quiz grades is "
+    cout << fixed << setprecision(2) << "Average programming grades is "
          << average << " out of 20";
+        }
 }
 
 double MyGrades:: testGrades()
@@ -88,20 +96,51 @@ double MyGrades:: testGrades()
     double average;
 
     cout << endl;
-    cout << "Show All Test Grades with Average" << endl;
 
-    if(!exams.size())
-         cout << "No Test Grades are recorded" << endl;
-    else
-        cout << "Test Grades are as follows " << endl;
-        for (int i = 0; i < exams.size(); i++)
-        {
-            cout << fixed << setprecision(2) << exams[i] << " ";
-            total += exams[i];
-            average = (total / exams.size() * 2);
+    if(!exams.size()){
+    cout << "Show All Test Grades with Average" << endl;
+    cout << "No Test Grades are recorded" << endl;
+    }
+    else{
+
+    cout << "Test Grades are as follows " << endl;
+
+    for (int i = 0; i < exams.size(); i++){
+        cout << fixed << setprecision(2) << exams[i] << " ";
+        total += exams[i];
+        average = (total / exams.size() * 2);
         }
+
     cout << endl;
 
     cout << fixed << setprecision(2) << "Average Test Grades is "
          << average << " out of 40";
+        }
+}
+// Haven't finished this yet just got some of it.
+double MyGrades:: overallGrade()
+{
+    cout << endl;
+    cout << "Show Overall Grades." << endl;
+    cout << endl;
+    cout << "My overall grades are as follows: " << endl;
+
+
+    if(!quiz.size())
+        cout << "No Quizzes are recorded" << endl;
+         else
+            quizGrades();
+
+    cout << endl;
+
+    if(!prog.size())
+        cout << "No Programming Assignments are recorded" << endl;
+         else
+            progGrades();
+
+    cout << endl;
+
+    if(!exams.size())
+        cout << "No Exams are recorded" << endl;
+
 }

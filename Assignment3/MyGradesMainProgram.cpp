@@ -43,9 +43,11 @@ int main() {
     if(choice == 4)       // to kill time I used if statements. It all looks like ass but
         g.quizGrades();   // we can fix the formatting later.
     if(choice == 5)
-        g.progAssign();
+        g.progGrades();
     if(choice == 6)
         g.testGrades();
+    if(choice == 7)
+        g.overallGrade();
         //    if (cin.fail()) {
         //        throw "That is not a number!";
        //     }
