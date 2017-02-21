@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1487718503 source:f:\data-structures\assignment3\mygradesdt.cpp
+	<iomanip>
+	<iostream>
+	<vector>
+	"MyGradesDT.h"
+
+1487718503 f:\data-structures\assignment3\mygradesdt.h
+	<iomanip>
+	<iostream>
+	<vector>
+

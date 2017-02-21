@@ -29,38 +29,37 @@ int main() {
          << "7. Show Overall Grades\n"
          << "9. Exit the Program\n" << endl;
 
-   // do {
-       // try {
-       do{
-            cout << "Enter your choice ---> ";
+    do {
+        try {
+       //do{
+            cout << "Enter your choice: ";
             cin >> choice;
-    if(choice == 1)
-        g.setQuiz(input);
-    if(choice == 2)
-        g.setPA(input);   // included these if statements for now
-    if(choice == 3)       // just to test out the functions and they seem fine
-        g.setExams(input);// I couldn't get it to work with your error catching so
-    if(choice == 4)       // to kill time I used if statements. It all looks like ass but
-        g.quizGrades();   // we can fix the formatting later.
-    if(choice == 5)
-        g.progGrades();
-    if(choice == 6)
-        g.testGrades();
-    if(choice == 7)
-        g.overallGrade();
-        //    if (cin.fail()) {
-        //        throw "That is not a number!";
-       //     }
-       // }
-       // catch (const char* error) {
-       //     cerr << "\nERROR:" << error << "\n"
-       //          << "Please choose a valid option." << endl;
-       //     cin.clear();
-        //    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-       // }
-   // } while (true);
-   cout << endl;
-   } while (choice != 9);
+//    if(choice == 1)
+//        g.setQuiz(input);
+//    if(choice == 2)
+//        g.setPA(input);   // included these if statements for now
+//    if(choice == 3)       // just to test out the functions and they seem fine
+//        g.setExams(input);// I couldn't get it to work with your error catching so
+//    if(choice == 4)       // to kill time I used if statements. It all looks like ass but
+//        g.quizGrades();   // we can fix the formatting later.
+//    if(choice == 5)
+//        g.progGrades();
+//    if(choice == 6)
+//        g.testGrades();
+//    if(choice == 7)
+//        g.overallGrade();
+            if (cin.fail()) {
+            throw "That is not a number!";
+            }
+        }
+        catch (const char* error) {
+            cerr << "\nERROR:" << error << "\n"
+                 << "Please choose a valid option." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+        cout << endl;
+    } while (choice != 9);
 
 
     return 0;
