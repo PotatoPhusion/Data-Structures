@@ -18,42 +18,62 @@ int main() {
     double input;
     MyGrades g;
 
-    cout << "Welcome to my Grades APP." << endl;
+    cout << "Welcome to my Grades APP.\n" << endl;
 
-    cout << "1. Set a Quiz Grade\n"
-         << "2. Set a Programming Assignment Grade\n"
-         << "3. Set a Test Grade\n"
-         << "4. Show all Quiz grades\n"
-         << "5. Show all Programming Assignment Grades\n"
-         << "6. Show all Test Grades\n"
-         << "7. Show Overall Grades\n"
-         << "9. Exit the Program\n" << endl;
 
     do {
+
+        cout << "Main Menu" << endl << endl;
+        cout << "1. Set a Quiz Grade\n"
+             << "2. Set a Programming Assignment Grade\n"
+             << "3. Set a Test Grade\n"
+             << "4. Show all Quiz grades\n"
+             << "5. Show all Programming Assignment Grades\n"
+             << "6. Show all Test Grades\n"
+             << "7. Show Overall Grades\n"
+             << "9. Exit the Program\n" << endl;
+
         try {
-       //do{
+
             cout << "Enter your choice: ";
             cin >> choice;
-//    if(choice == 1)
-//        g.setQuiz(input);
-//    if(choice == 2)
-//        g.setPA(input);   // included these if statements for now
-//    if(choice == 3)       // just to test out the functions and they seem fine
-//        g.setExams(input);// I couldn't get it to work with your error catching so
-//    if(choice == 4)       // to kill time I used if statements. It all looks like ass but
-//        g.quizGrades();   // we can fix the formatting later.
-//    if(choice == 5)
-//        g.progGrades();
-//    if(choice == 6)
-//        g.testGrades();
-//    if(choice == 7)
-//        g.overallGrade();
+
             if (cin.fail()) {
-            throw "That is not a number!";
+                throw "That is not a number!";
             }
+            else if (choice < 1 || choice == 8 || choice > 9) {
+                throw "That is not a valid menu option!";
+            }
+
+            switch (choice) {
+            case 1:
+                g.setQuiz(input);
+                break;
+            case 2:
+                g.setPA(input);
+                break;
+            case 3:
+                g.setExams(input);
+                break;
+            case 4:
+                g.quizGrades();
+                break;
+            case 5:
+                g.progGrades();
+                break;
+            case 6:
+                g.testGrades();
+                break;
+            case 7:
+                g.overallGrade();
+                break;
+            default:
+                break;
+            }
+
         }
         catch (const char* error) {
-            cerr << "\nERROR:" << error << "\n"
+            cerr << "\nERROR: " << error << "\n"
                  << "Please choose a valid option." << endl;
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -61,6 +81,8 @@ int main() {
         cout << endl;
     } while (choice != 9);
 
+    cout << "Implemented by Rafael Reza & Cullen Sturdivant" << endl
+         << "February, 2017" << endl;
 
     return 0;
 }
