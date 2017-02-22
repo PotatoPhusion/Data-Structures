@@ -32,7 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="MyGradesDT.cpp" />
+		<Unit filename="MyGradesDT.h" />
+		<Unit filename="MyGradesMainProgram.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

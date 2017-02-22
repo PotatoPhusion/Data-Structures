@@ -4,7 +4,7 @@
 // Spring 2017 - CS  3358 - Section Number: 2
 // Instructor : Husain Gholoom
 //
-// Grades stuff TODO: Change this
+// The driver function for testing the MyGradesDT class
 
 #include <iostream>
 #include <limits>

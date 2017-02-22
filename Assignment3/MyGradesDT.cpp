@@ -4,7 +4,8 @@
 // Spring 2017 - CS  3358 - Section Number: 2
 // Instructor : Husain Gholoom
 //
-// Grades stuff TODO: Change this
+// A class for storing and calculating the scores on quizzes, assignments, and
+// exams
 
 #include <iomanip>
 #include <iostream>
