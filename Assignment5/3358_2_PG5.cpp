@@ -10,6 +10,21 @@
 
 using namespace std;
 
+template<class stackType> class Stack{
+
+private:
+    stackType *stackArray;
+
+public:
+    Stack();
+    ~Stack();
+
+    void push(stackType);
+    stackType pop();
+    bool isFull() const;
+    bool isEmpty() const;
+};
+
 int main(){
 
     cout << "==== Welcome to My Stack / Queue Program ====" << endl << endl;
@@ -25,4 +40,12 @@ int main(){
 
 
     return 0;
+}
+
+Stack::Stack(){
+    stackArray = new stackType[];
+}
+
+Stack::~Stack(){
+    delete [] stackArray;
 }
