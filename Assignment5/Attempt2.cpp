@@ -203,10 +203,11 @@ int main(){
 
 //==============================================================================
 // [Description]
-//
+// Creates an empty stack/queue
 // [Params]
-//
+// No parameters
 // [Returns]
+// No returns
 //==============================================================================
 template <class T> Stack_Queue<T>::Stack_Queue(){
     sSize = 1;
@@ -220,10 +221,11 @@ template <class T> Stack_Queue<T>::Stack_Queue(){
 
 //==============================================================================
 // [Description]
-//
+// The destructor template, deletes the stack/queues
 // [Params]
-//
+// No parameters
 // [Returns]
+// No return.
 //==============================================================================
 template <class T> Stack_Queue<T>::~Stack_Queue(){
     delete [] stack;
@@ -234,10 +236,11 @@ template <class T> Stack_Queue<T>::~Stack_Queue(){
 
 //==============================================================================
 // [Description]
-//
+// Pushes the user input into a stack/queue and resizes accordingly
 // [Params]
-//
+// Data, the input from user
 // [Returns]
+// No return
 //==============================================================================
 template <class T> void Stack_Queue<T>::push(T data){
     if (top == sSize){
@@ -250,10 +253,11 @@ template <class T> void Stack_Queue<T>::push(T data){
 
 //==============================================================================
 // [Description]
-//
+// Pops the value at the top of the stack/queue
 // [Params]
-//
+// No parameter
 // [Returns]
+// Returns the popped off stack/queue value
 //==============================================================================
 template <class T> T Stack_Queue<T>::pop(){
     if (isStackEmpty()){
@@ -267,10 +271,11 @@ template <class T> T Stack_Queue<T>::pop(){
 
 //==============================================================================
 // [Description]
-//
+// Adds the users data to the rear of queue, making sure its not full first
 // [Params]
-//
+// Data, input from user
 // [Returns]
+// No return
 //==============================================================================
 template <class T> void Stack_Queue<T>::enqueue(T data){
     if (((rear + 1) % qSize) == front){
@@ -283,10 +288,11 @@ template <class T> void Stack_Queue<T>::enqueue(T data){
 
 //==============================================================================
 // [Description]
-//
+// Removes the value at the front of the queue
 // [Params]
-//
+// No parameter
 // [Returns]
+// The value that was removed from the front of queue
 //==============================================================================
 template <class T> T Stack_Queue<T>::dequeue(){
     if (isQueueEmpty()){
@@ -301,10 +307,11 @@ template <class T> T Stack_Queue<T>::dequeue(){
 
 //==============================================================================
 // [Description]
-//
+// Determines whether the stack is empty
 // [Params]
-//
+// No parameters
 // [Returns]
+// Otherwise returns false if the stack is not empty
 //==============================================================================
 template <class T> bool Stack_Queue<T>::isStackEmpty(){
     if(top == 0){
@@ -315,10 +322,11 @@ template <class T> bool Stack_Queue<T>::isStackEmpty(){
 
 //==============================================================================
 // [Description]
-//
+// Determines whether the queue is empty
 // [Params]
-//
+// No parameters
 // [Returns]
+// Otherwise returns false if the queue is not empty
 //==============================================================================
 template <class T> bool Stack_Queue<T>::isQueueEmpty(){
     if (rear == front){
@@ -329,10 +337,11 @@ template <class T> bool Stack_Queue<T>::isQueueEmpty(){
 
 //==============================================================================
 // [Description]
-//
+// Resizes the stack
 // [Params]
-//
+// No parameters
 // [Returns]
+// New size of stack
 //==============================================================================
 template <class T> T *Stack_Queue<T>::resizeStack(){
 
@@ -351,10 +360,11 @@ template <class T> T *Stack_Queue<T>::resizeStack(){
 
 //==============================================================================
 // [Description]
-//
+// Resizes the queue
 // [Params]
-//
+// No parameters
 // [Returns]
+// New size of queue
 //==============================================================================
 template <class T> T *Stack_Queue<T>::resizeQueue(){
 
@@ -373,10 +383,11 @@ template <class T> T *Stack_Queue<T>::resizeQueue(){
 
 //==============================================================================
 // [Description]
-//
+// Determines the length of the stack
 // [Params]
-//
+// No parameters
 // [Returns]
+// Returns the length of the stack
 //==============================================================================
 template <class T> int Stack_Queue<T>::stackLength(){
     return top;
@@ -384,10 +395,11 @@ template <class T> int Stack_Queue<T>::stackLength(){
 
 //==============================================================================
 // [Description]
-//
+// Determines the length of the queue
 // [Params]
-//
+// No parameters
 // [Returns]
+// Returns the length of the queue
 //==============================================================================
 template <class T> int Stack_Queue<T>::queueLength(){
     int count = 0;

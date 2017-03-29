@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1487743629 source:c:\users\rafael\desktop\c++\github\assignment3\mygradesmainprogram.cpp
+	<iostream>
+	<limits>
+	"MyGradesDT.h"
+
+1487715938 c:\users\rafael\desktop\c++\github\assignment3\mygradesdt.h
+	<iomanip>
+	<iostream>
+	<vector>
+
+1487745001 source:c:\users\rafael\desktop\c++\github\assignment3\mygradesdt.cpp
+	<iomanip>
+	<iostream>
+	<vector>
+	"MyGradesDT.h"
+
