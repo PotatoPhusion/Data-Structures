@@ -10,6 +10,7 @@
 #include <iomanip>
 #include <cstdlib>
 #include <ctime>
+#include <limits>
 
 
 using namespace std;
@@ -22,6 +23,7 @@ void bubbleSort(int[], int);
 
 int main()
 {
+    srand(time(0));
 
     cout << "Thinking Recursively" << endl << endl;
 
@@ -39,21 +41,40 @@ int main()
     cout << "\t5. Sort the array in ascending order" << endl;
     cout << "\t6. Search the array for the first value in the array" << endl;
     cout << "\t7. Search the array for the number 600." << endl;
-    cout << "\t8. Determine if a number is prime (process all array values)\n";
+    cout << "\t8. Determine if a number is prime (process all array values)\n"
+         << endl;
 
     int input;
+    int length = 0;
+    int *arrSize;
     int b = 2;
 
-    cout << "Select from the following menu" << endl;
-    cout << "A. Enter array size that is > 4." << endl
-         << "X. Terminate the program. ";
+    do {
+        try {
+            cout << "Select from the following menu" << endl;
+            cout << "A. Enter array size that is > 4." << endl
+                 << "X. Terminate the program.     ";
+            cin >> input;
 
-    cin >> input;
+            if (input != 'a' || input != 'A'){
+                throw;
+            }
 
-    srand(time(0));
-    int *arrSize;
+            cout << "Enter Array Size: ";
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cin >> length;
+            }
 
-    arrSize = new int [input];
+            arrSize = new int [length];
+
+        }
+        catch (...) {
+            cerr << "*** Invalid Option ***" << endl;
+        }
+    } while (input != 'x' || input != 'X')
+
+
 
     cout << endl;
 
