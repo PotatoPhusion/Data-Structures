@@ -168,13 +168,13 @@ int main()
 //================================== Part 10 ===================================
                 cout << "Does the array:  ";
                 printArray(arr, length);
-                cout << "  have the number " << 600 << "?  ";
-                found = notMember(arr, length - 1, 0);
+                cout << "  have the number " << 600 << "? ";
+                found = notMember(arr, length - 1, 600);
                 if (found){
                     cout << "YES" << endl;
                 }
                 else {
-                    cout << "NO" << endl;
+                    cout << " NO" << endl;
                 }
                 cout << endl << endl;
 
@@ -388,14 +388,16 @@ bool notMember(int arr[], int last, int value, int first){
 
     mid = (first + last) / 2;
 
-    if (arr[mid] == value)
+    if (arr[mid] == value){
         return true;
+    }
     else if (arr[mid] > value){
-        notMember(arr, first, mid - 1, value);
+        return notMember(arr, last, value, mid + 1);
     }
     else if (arr[mid] < value){
-        notMember(arr, first, mid + 1, value);
+        return notMember(arr, mid - 1, value, first);
     }
+    return false;
 }
 
 //==============================================================================
