@@ -380,24 +380,22 @@ bool isMember(int arr[], int length, int value){
 //==============================================================================
 bool notMember(int arr[], int last, int value, int first){
 
-cout << "First: " << first << endl;
-cout << "Last: " << last << endl;
+    int mid;
 
-    if (first < last){
-cout << "First If statement" << endl;
-        int mid = (first + last) / 2;
-
-        if (value == arr[mid]){
-            return true;
-        }
-        else if (value > arr[mid]){
-            return notMember(arr, mid, value, first);
-        }
-        else {
-            return notMember(arr, last, value, mid-1);
-        }
+    if (first > last){
+        return false;
     }
-    return false;
+
+    mid = (first + last) / 2;
+
+    if (arr[mid] == value)
+        return true;
+    else if (arr[mid] > value){
+        notMember(arr, first, mid - 1, value);
+    }
+    else if (arr[mid] < value){
+        notMember(arr, first, mid + 1, value);
+    }
 }
 
 //==============================================================================
