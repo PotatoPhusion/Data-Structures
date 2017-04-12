@@ -4,7 +4,7 @@
 // Spring 2017 - CS  3358 - Section Number: 2
 // Instructor : Husain Gholoom
 //
-// Does shit that I haven't filled in yet
+// Provides examples of how recursive functions work
 
 #include <iostream>
 #include <iomanip>
