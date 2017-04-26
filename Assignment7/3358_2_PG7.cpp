@@ -31,7 +31,12 @@ public:
     void printTable();
 };
 
-
+//==============================================================================
+// [Description]
+// Creates an array for the hashtable and number of hashes and collisions
+// [Parameters]
+// S for the size of the arrays
+//==============================================================================
 Hashtable::Hashtable(int s){
     size = s;
 
@@ -48,11 +53,7 @@ Hashtable::Hashtable(int s){
 
 //==============================================================================
 // [Description]
-//
-// [Parameters]
-//
-// [Returns]
-//
+// Gets size of array
 //==============================================================================
 int Hashtable::getSize(){
     return size;
@@ -60,11 +61,9 @@ int Hashtable::getSize(){
 
 //==============================================================================
 // [Description]
-//
+//  Hashes the array
 // [Parameters]
-//
-// [Returns]
-//
+// Input to fill the array with integers
 //==============================================================================
 void Hashtable::hash(int input){
 
@@ -87,11 +86,7 @@ void Hashtable::hash(int input){
 
 //==============================================================================
 // [Description]
-//
-// [Parameters]
-//
-// [Returns]
-//
+// Searches the hashtable for users value
 //==============================================================================
 void Hashtable::searchTable(){
     int num;
@@ -112,11 +107,7 @@ void Hashtable::searchTable(){
 
 //==============================================================================
 // [Description]
-//
-// [Parameters]
-//
-// [Returns]
-//
+//  Inserts the users value into the hashtable
 //==============================================================================
 void Hashtable::insert(){
     int num;
@@ -130,11 +121,7 @@ void Hashtable::insert(){
 
 //==============================================================================
 // [Description]
-//
-// [Parameters]
-//
-// [Returns]
-//
+// Deletes the value the user inputted
 //==============================================================================
 bool Hashtable::deleteValue(){
     int num;
@@ -154,11 +141,7 @@ bool Hashtable::deleteValue(){
 
 //==============================================================================
 // [Description]
-//
-// [Parameters]
-//
-// [Returns]
-//
+// Displays the number of hashes and collisions done to the hashtable
 //==============================================================================
 void Hashtable::displayStats(){
 
@@ -180,7 +163,7 @@ void Hashtable::displayStats(){
 
 //==============================================================================
 // [Description]
-//
+// Displays the hashtable
 //==============================================================================
 void Hashtable::printTable(){
     for (int i = 0; i < size/2; i++){
